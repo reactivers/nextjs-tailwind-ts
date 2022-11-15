@@ -1,11 +1,12 @@
 {
   "name": "@reactivers/nextjs-tailwind-ts",
   "version": "1.0.0",
-  "description": "NextJS, Tailwind, Typescript boilerplate",
+  "description": "NextJS, Tailwind, Typescript, Cypress boilerplate",
   "keywords": [
     "NextJS",
     "Tailwindcss",
     "Tailwind",
+    "Cypress",
     "Typescript"
   ],
   "bugs": {
@@ -32,12 +33,13 @@
     "export": "npm run build && next export",
     "export-dev": "npm run build-dev && next export",
     "export-test": "npm run build-test && next export",
-    "lint": "next lint",
+    "lint": "npx lint-staged",
     "sitemap": "npx next-sitemap",
     "cypress": "NEXT_PUBLIC_APP_ENV=test cypress open",
     "cypress:headless": "NEXT_PUBLIC_APP_ENV=test cypress run",
     "e2e": "npm run build-test && start-server-and-test start-test http://localhost:3000 cypress",
-    "e2e:headless": "npm run build-test && start-server-and-test start-test http://localhost:3000 cypress:headless"
+    "e2e:headless": "npm run build-test && start-server-and-test start-test http://localhost:3000 cypress:headless",
+    "prepare": "husky install"
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",
@@ -58,8 +60,18 @@
     "dotenv": "^16.0.1",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
+    "prettier": "^2.7.1",
+    "husky": "^8.0.0",
     "start-server-and-test": "^1.14.0",
     "ts-node": "^10.9.1",
     "typescript": "4.7.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,css,html}": [
+      "prettier --write ."
+    ],
+    "package.json": [
+      "prettier --parser json"
+    ]
   }
 }
