@@ -1,6 +1,6 @@
 {
   "name": "@reactivers/nextjs-tailwind-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NextJS, Tailwind, Typescript, Cypress boilerplate",
   "license": "ISC",
   "keywords": [
@@ -35,13 +35,13 @@
     "export": "npm run build && next export",
     "export:dev": "npm run build:dev && next export",
     "export:test": "npm run build:test && next export",
-    "lint": "next lint",
-    "format": "npx prettier --write \"src/**/*.{ts,tsx}\" \"pages/**/*.{ts,tsx}\"",
     "sitemap": "npx next-sitemap",
     "cypress": "NEXT_PUBLIC_APP_ENV=test cypress open",
     "cypress:headless": "NEXT_PUBLIC_APP_ENV=test cypress run",
     "e2e": "npm run build:test && start-server-and-test start:test http://localhost:3000 cypress",
     "e2e:headless": "npm run build:test && start-server-and-test start:test http://localhost:3000 cypress:headless",
+    "lint": "next lint",
+    "format": "npx prettier --write \"src/**/*.{ts,tsx}\" \"pages/**/*.{ts,tsx}\"",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -58,16 +58,16 @@
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
     "@commitlint/config-conventional": "^17.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "husky": "^8.0.3",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
     "cypress": "^10.9.0",
     "dotenv": "^16.0.1",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6",
-    "husky": "^8.0.3",
     "next-sitemap": "^3.1.21",
     "start-server-and-test": "^1.14.0",
     "ts-node": "^10.9.1",
