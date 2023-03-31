@@ -47,7 +47,6 @@ const cloneRepo = (projectPath) => {
 };
 
 const installDependencies = () => {
-  console.log("CURRENT PATH", process.cwd());
   console.log("Installing dependencies...");
   execSync("npx yarn install --frozen-lockfile --network-timeout 100000");
 };
